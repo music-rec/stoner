@@ -20,11 +20,15 @@ Thanks to [@jameskyburz](https://github.com/jameskyburz/) for guiding me to use 
 ## How to use
 
 1. Donwnload binaries from [here](https://github.com/Janglee123/stoner/releases)
-2. Run app on *nix
+2. install dependencies
+    - Arch based
+        `$ sudo pacman -S alsa-lib ffmpeg`
+3. Run app on *nix
     `$ ./stoner <youtube-video-id>`
 
 ## Devlopment
 
+1. install external dependencies
 1. Clone repo
 `$ git clone https://github.com/Janglee123/stoner`
 2. Install dependencies
@@ -38,4 +42,3 @@ For packagin node project [pkg](https://github.com/zeit/pkg) is used.
 ## TODO
 - [ ] Make progress bar for audio.
 - [ ] fix looping songs.
-- [ ] remove external dependency of ffmpeg 
