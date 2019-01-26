@@ -21,7 +21,7 @@ Thanks to [@jameskyburz](https://github.com/jameskyburz/) for guiding me to use 
 
 1. Donwnload binaries from [here](https://github.com/Janglee123/stoner/releases)
 2. Run app on *nix
-    `$ ./stoner <youtube-video-url>`
+    `$ ./stoner <youtube-video-id>`
 
 ## Devlopment
 
@@ -30,7 +30,7 @@ Thanks to [@jameskyburz](https://github.com/jameskyburz/) for guiding me to use 
 2. Install dependencies
 `$ npm install`
 3. Run app
-`$ npm start <youtube-video-url>` 
+`$ npm start <youtube-video-id>` 
 
 ### Packaging 
 For packagin node project [pkg](https://github.com/zeit/pkg) is used.
