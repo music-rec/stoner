@@ -4,9 +4,12 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node app.js",
+    "dist": "pkg ."
   },
-  "bin": "app.js",
+  "bin": {
+    "stoner": "app.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -16,6 +19,16 @@
     "speaker": "^0.4.1",
     "ytdl-core": "^0.29.1"
   },
-  "devDependencies": {},
-  "description": ""
+  "devDependencies": {
+    "pkg": "^4.3.7"
+  },
+  "description": "> Stream YouTube songs in terminal without annoying Ads.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Janglee123/stoner.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Janglee123/stoner/issues"
+  },
+  "homepage": "https://github.com/Janglee123/stoner#readme"
 }
