@@ -3,7 +3,6 @@ const readline = require('readline');
 const FFmpeg = require('fluent-ffmpeg');
 const decoder = require('lame').Decoder;
 const Speaker = require('speaker');
-const fs = require('fs');
 const opt = {
     videoFormat: 'mp4',
     quality: 'lowest',
@@ -12,13 +11,13 @@ const opt = {
         return format.container === opt.videoFormat && format.audioEncoding
     }
 }
-
+let history = [];
 let next_id ;
 
 var getVideo = function(uri){
-    
+
     let video = ytdl(uri, opt);
-    
+
     video.on('progress', (chunkLength, downloaded, total) => {
         const percent = downloaded / total;
         readline.cursorTo(process.stdout, 0);
@@ -27,7 +26,7 @@ var getVideo = function(uri){
         readline.moveCursor(process.stdout, 0, -1);
         //hack dont let video stream to stop
         video.resume();
-    });  
+    });
     video.on('info', (info) => {
         console.log(info.title);
         next_id = info.related_videos[0].id;
@@ -42,13 +41,11 @@ var getVideo = function(uri){
 var play = function(){
     let video = null;
     let ffmpeg;
-    try {
-        video = getVideo(next_id)
-    } catch(err){ throw err; }
-    try {
-        ffmpeg = new FFmpeg(video);
-    } catch(err){ throw err; }
-    
+
+    history.push[next_id];
+    video = getVideo(next_id);
+    ffmpeg = new FFmpeg(video);
+
     let speaker = new Speaker();
     let out = ffmpeg.format(opt.audioFormat).pipe(decoder()).pipe(speaker);;
 
@@ -56,7 +53,7 @@ var play = function(){
         video.end();
         throw error;
     });
-    
+
     speaker.on('close', ()=>{
         play();
     });
@@ -67,7 +64,7 @@ if(process.argv[2]){
     id = process.argv[2];
     if(!ytdl.validateID(id)){
         console.log('id is not valid');
-        return;
+        process.exit();
     }
     else{
         next_id = id;

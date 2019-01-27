@@ -16,6 +16,7 @@
   "dependencies": {
     "fluent-ffmpeg": "^2.1.2",
     "lame": "^1.2.4",
+    "node-lame": "^1.2.0",
     "speaker": "^0.4.1",
     "ytdl-core": "^0.29.1"
   },
