@@ -17,18 +17,12 @@ App is created for one day hack challenge.
 
 Thanks to [@jameskyburz](https://github.com/jameskyburz/) for guiding me to use ytdl-core from this [module](https://github.com/jameskyburz/youtube-audio-stream).
 
-## How to use
-
-1. Donwnload binaries from [here](https://github.com/Janglee123/stoner/releases)
-2. install dependencies
-    - Arch based
-        `$ sudo pacman -S alsa-lib ffmpeg`
-3. Run app on *nix
-    `$ ./stoner <youtube-video-id>`
 
 ## Devlopment
 
 1. install external dependencies
+    - Arch based
+        `$ sudo pacman -S alsa-lib ffmpeg`
 1. Clone repo
 `$ git clone https://github.com/Janglee123/stoner`
 2. Install dependencies
