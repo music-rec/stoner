@@ -30,9 +30,6 @@ Thanks to [@jameskyburz](https://github.com/jameskyburz/) for guiding me to use 
 3. Run app
 `$ npm start <youtube-video-id>` 
 
-### Packaging 
-For packagin node project [pkg](https://github.com/zeit/pkg) is used.
-
 ## TODO
 - [ ] Make progress bar for audio.
 - [ ] fix looping songs.
