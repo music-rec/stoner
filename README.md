@@ -32,4 +32,5 @@ Thanks to [@jameskyburz](https://github.com/jameskyburz/) for guiding me to use 
 
 ## TODO
 - [ ] Make progress bar for audio.
-- [ ] fix looping songs.
+- [x] fix looping songs.
+- [ ] handle `Error: Input stream error: Too many redirects`

@@ -11,13 +11,13 @@ const opt = {
         return format.container === opt.videoFormat && format.audioEncoding
     }
 }
-let history = [];
+
+let history = new Set();
 let next_id ;
 
 var getVideo = function(uri){
-
     let video = ytdl(uri, opt);
-
+    
     video.on('progress', (chunkLength, downloaded, total) => {
         const percent = downloaded / total;
         readline.cursorTo(process.stdout, 0);
@@ -29,7 +29,14 @@ var getVideo = function(uri){
     });
     video.on('info', (info) => {
         console.log(info.title);
-        next_id = info.related_videos[0].id;
+        console.log('Id : ' + next_id);
+        let i = 0;
+        while( history.has(info.related_videos[i].id) && i < info.related_videos.length - 1){
+            i++;
+            if(!info.related_videos[i].id)i++;
+        }
+        next_id = info.related_videos[i].id;
+        history.add(next_id);
     });
     video.on('end', () => {
         process.stdout.write('\n\n');
@@ -38,11 +45,11 @@ var getVideo = function(uri){
     return video;
 }
 
+
 var play = function(){
     let video = null;
     let ffmpeg;
 
-    history.push[next_id];
     video = getVideo(next_id);
     ffmpeg = new FFmpeg(video);
 
@@ -59,18 +66,19 @@ var play = function(){
     });
 }
 
-
 if(process.argv[2]){
-    id = process.argv[2];
-    if(!ytdl.validateID(id)){
-        console.log('id is not valid');
-        process.exit();
+    arg = process.argv[2];
+    id = ytdl.getVideoID(arg);
+    
+    if(ytdl.validateID(id)){
+        next_id = id;
+        history.add(id);
+        play();
     }
     else{
-        next_id = id;
-        play();
+        console.log('not valid video url or id ');
     }
 }
 else{
-    console.log('Give youtube url');
+    console.log('Give youtube videoID or url');
 }
