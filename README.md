@@ -17,20 +17,33 @@ App is created for one day hack challenge.
 
 Thanks to [@jameskyburz](https://github.com/jameskyburz/) for guiding me to use ytdl-core from this [module](https://github.com/jameskyburz/youtube-audio-stream).
 
+## Install
+
+1. Download
+    - `$ wget https://github.com/Janglee123/stoner/releases/download/v1.1/stoner.tar.bz2`
+2. Extract
+    - `$ tar jxf stoner.tar.bz2`
+3. Move it to bin dir to run it anywhere
+    - `$ sudo sudo cp stoner /usr/bin/`
+
+## How to Use
+
+- `$ stoner <youtube-video-url>`
 
 ## Devlopment
 
 1. install external dependencies
     - Arch based
         `$ sudo pacman -S alsa-lib ffmpeg`
-1. Clone repo
+2. Clone repo
 `$ git clone https://github.com/Janglee123/stoner`
-2. Install dependencies
+3. Install dependencies
 `$ npm install`
-3. Run app
-`$ npm start <youtube-video-id>` 
+4. Run app
+`$ npm start <youtube-video-url>` 
 
 ## TODO
 - [ ] Make progress bar for audio.
 - [x] fix looping songs.
 - [ ] handle `Error: Input stream error: Too many redirects`
+- [ ] add playlist support
