@@ -3,7 +3,7 @@
 
 If use youtube for listing songs in background than this app is you new friend.
 
-This app streams youtube songs to speacker without caching on hard drive using [ytdl]() to get audio stream from youtube. it will play songs automatically from youtube video suggestion.
+This app streams youtube songs to speaker without caching on hard drive using [ytdl]() to get audio stream from youtube. it will play songs automatically from youtube video suggestion.
 
 To convert to audio the module [fluent-ffmpeg](https://github.com/schaermu/node-fluent-ffmpeg) is used.
 
