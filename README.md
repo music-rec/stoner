@@ -35,6 +35,8 @@ Thanks to [@jameskyburz](https://github.com/jameskyburz/) for guiding me to use 
 1. install external dependencies
     - Arch based
         `$ sudo pacman -S alsa-lib ffmpeg`
+    - Ubuntu based
+        `$ sudo apt-get install libasound2`
 2. Clone repo
 `$ git clone https://github.com/Janglee123/stoner`
 3. Install dependencies
