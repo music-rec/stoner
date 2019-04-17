@@ -13,8 +13,6 @@ You will need to have [ffmpeg](http://www.ffmpeg.org/) and the necessary encodin
 `$ sudo apt-get install ffmpeg`
 * If you're on OSX, this can be handled easily using [Homebrew](http://brew.sh/) (`brew install ffmpeg`).
 
-App is created for one day hack challenge.
-
 Thanks to [@jameskyburz](https://github.com/jameskyburz/) for guiding me to use ytdl-core from this [module](https://github.com/jameskyburz/youtube-audio-stream).
 
 ## Install
@@ -29,6 +27,7 @@ Thanks to [@jameskyburz](https://github.com/jameskyburz/) for guiding me to use 
 ## How to Use
 
 - `$ stoner <youtube-video-url>`
+    Note: Put url in between double quotes.
 
 ## Devlopment
 
@@ -45,7 +44,8 @@ Thanks to [@jameskyburz](https://github.com/jameskyburz/) for guiding me to use 
 `$ npm start <youtube-video-url>` 
 
 ## TODO
-- [ ] Make progress bar for audio.
 - [x] fix looping songs.
+- [x] add playlist support
+- [ ] Make progress bar for audio.
 - [ ] handle `Error: Input stream error: Too many redirects`
-- [ ] add playlist support
+- [ ] remove ffmpge dependency [make it completely portable]

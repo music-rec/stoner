@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "dist": "pkg ."
+    "build": "node node_modules/pkg/lib-es5/bin.js ./package.json --target node10-linux-x64",
   },
   "bin": {
     "stoner": "app.js"
@@ -18,7 +18,8 @@
     "lame": "^1.2.4",
     "node-lame": "^1.2.0",
     "speaker": "^0.4.1",
-    "ytdl-core": "^0.29.1"
+    "ytdl-core": "^0.29.1",
+    "ytpl": "^0.1.14"
   },
   "devDependencies": {
     "pkg": "^4.3.7"
